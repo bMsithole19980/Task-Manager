@@ -1,5 +1,6 @@
 .header{
     background-color: rgb(179, 179, 179);
+    height: 100vh;
 }
 .header-name{
     align-items: center;
