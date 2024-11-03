@@ -1,0 +1,142 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+.backArrow{
+    margin-right: 1300px;
+    margin-top: 20px;
+    background-color: #61dafb;
+    border-color: #61dafb;
+    border-style: none;
+}
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.search-input {
+    display: block;
+    width: 100%;
+    max-width: 500px; 
+    padding: 12px;
+    margin: 0 auto 20px; 
+    border: 1px solid #ccc;
+    border-radius: 25px; 
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #4caf50; /* Highlight border on focus */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on focus */
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.task-table thead {
+    background-color: #4caf50;
+    color: white;
+}
+
+.task-table th,
+.task-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.task-table tr:hover td {
+    background-color: #f1f1f1;
+}
+
+.action-icon {
+    font-size: 1.2rem;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.fa-edit {
+    color: #007bff;
+}
+
+.fa-edit:hover {
+    color: #0056b3;
+}
+
+.fa-trash {
+    color: #dc3545;
+}
+
+.fa-trash:hover {
+    color: #a71d2a;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: 100%; /* Allow input to shrink responsively */
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .task-table th, .task-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .action-icon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .search-input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .task-table th, .task-table td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .task-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .action-icon {
+        font-size: 0.9rem;
+    }
+}

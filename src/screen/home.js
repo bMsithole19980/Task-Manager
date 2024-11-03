@@ -1,15 +1,18 @@
 import React from "react";
 import "./home.css";
 import FormContainer from "../componets/formContainer";
-function home() {
+
+
+function Home() {
   return (
     <div className="header">
       <div className="header-name">
         <h3>Task Manager</h3>
       </div>
-       <FormContainer/>
+      <FormContainer />
+      
     </div>
   );
 }
 
-export default home;
+export default Home;

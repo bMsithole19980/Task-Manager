@@ -1,15 +1,8 @@
-.header{
-    background-color: rgb(179, 179, 179);
-    height: 100vh;
-}
-.header-name{
-    align-items: center;
-    justify-content: center;
-}
 .header-name h3{
+    align-items: center;
     text-align: center;
+    font-family: 'Poppin';
     font-size: 24px;
-    font-family: 'Popppins';
-    font-weight: bold;
+    color: #606060;
 
 }

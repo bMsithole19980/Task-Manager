@@ -6,26 +6,34 @@ const {collection , addDoc ,  getDocs, doc ,updateDoc ,deleteDoc, getDoc} = requ
 //Reference to the tasks collections in fiirestore
 const taskCollection = collection(db , 'Tasks');
 
-// create ne task  POST/ tasks
-router.post('/Tasks', async(req , res)=>{
-    try{
-        const {title , description , dueDate } = req.body;
-        const newTask={
+router.post('/Tasks', async (req, res) => {
+    try {
+        const { title, task, dueDate, priority } = req.body;  // Ensure all fields are received
+
+        // Validate that all fields are provided
+        if (!title || !task || !dueDate || !priority) {
+            console.error('Missing task data:', req.body);  // Log the request body for debugging
+            return res.status(400).json({ error: "Missing task data" });
+        }
+
+        const newTask = {
             title,
             task,
             dueDate,
             priority,
-            createAt: new Date(),
+            createdAt: new Date() // track date a task waas created
         };
+
+        // Add the new task to these fireba Firestore collection
         const docRef = await addDoc(taskCollection, newTask);
-        res.status(201).json({id: docRef.id , ...newTask});
-
-    }catch(error){
-        console.error('Error adding task', error);
-        res.status(500).send('Error cfreating task');
+        res.status(201).json({ id: docRef.id, ...newTask }); // Return the created task with ID
+        console.log("New task created:", newTask); // Log successful creation
+    } catch (error) {
+        console.error('Error adding task:', error); // Log the error
+        res.status(500).json({ error: "Error creating task" });
     }
-
 });
+
 
 // Retrieve all tasks (GET/tasks)
 router.get('/Tasks', async (req , res) =>{

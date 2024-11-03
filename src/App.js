@@ -1,10 +1,18 @@
 import './App.css';
-import Home from './screen/home'
+import Home from './screen/home'; 
+import TaskTable from './screen/taskTable';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+
 function App() {
   return (
-    <div className="App">
-      <Home/>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} /> 
+          <Route path="/tasks" element={<TaskTable />} /> 
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
